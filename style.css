@@ -1,0 +1,28 @@
+.theDiv {
+    display: flex;
+}
+
+.new {
+    width: 25px;
+    height: 25px;
+    background-color: rgb(88, 185, 241);
+    border: 4px solid rgb(173, 196, 238);
+}
+
+.vertical-container {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.horiz-1 {
+    display: flex;
+}
+
+.new-horiz-div {
+    width: 25px;
+    height: 25px;
+    background-color: pink;
+    border: 4px solid rgb(62, 172, 29);
+}
