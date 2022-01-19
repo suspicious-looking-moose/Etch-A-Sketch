@@ -10,12 +10,38 @@
 </head>
 <body>
 
+<div class='mainbody'>
+
     <h1>Etch-A-Sketch</h1>
-       
 
-            <div class='theDiv'>
-        </div>
+    <div class='theDiv'>
+    </div>
+
+    <div class='buttons'>
+    <div class='buttonsleft'>
+    <div class='slider-ui'>
+        <h3 id='reset-no'><span id='id1'>16</span> x <span id='id2'>16</span></h3>
+        <input id='mySlider' type="range" min="1" max="64" value="16">
+        <button class='reset'>Reset</button>
+    </div>
+    </div>
+
+    <div class='buttonsright'> 
+
+        <div class='chooser'>
+        <input id='colour-picker' type="color" value="#50bfe6"> 
+        <h4>Colour Chooser</h4> 
+    </div>
 
 
+        <div class='rainbow'>
+            <button onclick="rainbowMode()">Rainbow Mode</button>
+    </div>
+        
+    </div>
+
+    </div>
+
+</div>
 </body>
 </html>
