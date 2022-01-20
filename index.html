@@ -5,7 +5,7 @@
     <script src="script.js" defer></script>
     <title>Etch-A-Sketch</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel='icon' href="https://cdn.iconscout.com/icon/free/png-256/pencil-1575027-1331365.png">
 
 </head>
 <body>
@@ -18,30 +18,25 @@
     </div>
 
     <div class='buttons'>
-    <div class='slider-ui'>
-        <input id='mySlider' type="range" min="1" max="64" value="16">
-        <h3 id='reset-no'><span id='id1'>16</span> x <span id='id2'>16</span></h3>
-    </div>
+        <div class='slider-ui'>
+            <input id='mySlider' type="range" min="1" max="64" value="16">
+            <h3 id='reset-no'><span id='id1'>16</span> x <span id='id2'>16</span></h3>
+        </div>
     
         <div class='chooser'>
-        <input id='colour-picker' type="color" value="#999999"> 
-        <h3>Colour Picker</h3> 
-    </div>
-
-    <div class='buttondiv'>
-        <button class='reset'>Reset</button>
+            <input id='colour-picker' type="color" value="#999999"> 
+            <h3>Colour Picker</h3> 
         </div>
 
+        <div class='buttondiv'>
+            <button class='reset'>Reset</button>
+        </div>
 
         <div class='rainbow'>
             <button onclick="rainbowMode()">Rainbow Mode</button>
-    </div>
+        </div>
         
 </div>
-
-
-    </div>
-
 </div>
 </body>
 </html>

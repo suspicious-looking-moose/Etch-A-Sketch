@@ -8,6 +8,8 @@ body {
     background-color: beige;
 }
 
+/* Etch A Sketch Body */
+
 .mainbody {
     border: 2px rgb(160, 0, 0) solid;
     background-color: rgb(216, 45, 45);
@@ -19,11 +21,16 @@ body {
     margin-top: 12px;
 }
 
+/* Title */
+
 h1 {
     text-align: center;
     font-style: italic;
     color: rgb(236, 236, 84);
 }
+
+/* Grid CSS */
+
 .theDiv {
     display: flex;
     background-color: rgb(243, 243, 243);
@@ -36,7 +43,6 @@ h1 {
 }
 
 .new {
-    border: 1px solid rgb(231, 231, 231);
     display: flex;
     flex-grow: 1;
 }
@@ -46,6 +52,8 @@ h1 {
     display: flex;
     flex-direction: column;
 }
+
+/* Buttons UI */
 
 .buttons {
     width: 700px;
@@ -65,17 +73,42 @@ h1 {
     margin: 0;
 }
 
+h3 {
+    padding-top :10px;
+}
+
+
+/* Slider */
+
+.slider-ui {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .buttondiv, .rainbow {
     align-self: center;
 }
 
+/* Colour Picker */
+
 .chooser {
-    border-color: green;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
+
+#colour-picker {
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    border-radius: 20px;
+    width: 50%;
+    height: 20px;
+}
+
+/* Reset Button */
 
 .buttondiv button {
     background-color: rgb(184, 38, 38);
@@ -85,24 +118,13 @@ h1 {
     font-size: 18px;
     font-weight: 600;
     color: rgb(236, 236, 84);
-
 }
 
-.buttondiv button:hover {
+/* Rainbow Mode Button */
+
+.buttondiv button:hover, .rainbow button:hover {
     background-color: #b82626c4;
-    ;
 }
-
-h3 {
-    padding-top :10px;
-}
-
-.slider-ui {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 
 .rainbow button {
     background-color: #b82626;
@@ -114,18 +136,5 @@ h3 {
     color: #ecec54;
 }
 
-.rainbow button:hover {
-    background-color: #b82626c4;
-    ;
-}
-
-#colour-picker {
-    padding: 0;
-    margin: 0;
-    cursor: pointer;
-    border-radius: 20px;
-    width: 50%;
-    height: 20px;
-}
 
 

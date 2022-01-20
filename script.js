@@ -7,6 +7,14 @@ const theResetButton = document.querySelector('.reset');
 theResetButton.addEventListener('click', resetButton);
 loadGrid(defaultWidth);
 
+// Function for the reset button:
+function resetButton() {
+    let reloadwidth = document.getElementById('mySlider');
+    reloadwidth = reloadwidth.value;
+    clearGrid(currentWidth);
+    loadGrid(reloadwidth);
+};
+
 // SETTING UP RESET SLIDER
 let slider = document.querySelector('#mySlider');
 const dimension = document.querySelector('#id1');
@@ -20,13 +28,44 @@ slider.oninput = function() {
 
 }
 
-
 // Setting paint picker to change on selection:
 const paintPicker = document.querySelector('#colour-picker');
 paintPicker.addEventListener('input', changeColour);
 
-// ETCH A SKETCH FUNCTIONS
+// Functions to Change the Colours:
+function changeColour() {
+    let paintColour = document.querySelector('#colour-picker');
+    paintColour = paintColour.value;
 
+    const nodeOfBoxes = document.querySelectorAll('.new');
+    const arrayOfBoxes = Array.from(nodeOfBoxes); // I have to convert to an array from Nodelist. Remember that.
+    arrayOfBoxes.forEach(element => {
+        element.addEventListener('mouseover', changeAttribute => {
+            element.setAttribute('style', `background-color: ${paintColour}`);
+        });
+    });
+};
+
+function rainbowMode() {
+    let paintColour = document.querySelector('#colour-picker');
+    paintColour = paintColour.value;
+
+    const nodeOfBoxes = document.querySelectorAll('.new');
+    const arrayOfBoxes = Array.from(nodeOfBoxes);
+    arrayOfBoxes.forEach(element => {
+        element.addEventListener('mouseover', changeAttribute => {
+            element.setAttribute('style', `background-color: ${getRandomColour()}`);
+        });
+    });
+};
+
+function getRandomColour() {
+    const colors = ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee'];
+    randomColour = colors[Math.floor(Math.random() * colors.length)];
+    return randomColour;
+};
+
+// ETCH A SKETCH FUNCTIONS
 // Loads the grid:
 function loadGrid(width) { // Takes grid width as variable.
 
@@ -57,38 +96,6 @@ function loadGrid(width) { // Takes grid width as variable.
     };  
 };
 
-function changeColour() {
-    let paintColour = document.querySelector('#colour-picker');
-    paintColour = paintColour.value;
-
-    const nodeOfBoxes = document.querySelectorAll('.new');
-    const arrayOfBoxes = Array.from(nodeOfBoxes);
-    arrayOfBoxes.forEach(element => {
-        element.addEventListener('mouseover', changeAttribute => {
-            element.setAttribute('style', `background-color: ${paintColour}`);
-        });
-    });
-};
-
-function rainbowMode() {
-    let paintColour = document.querySelector('#colour-picker');
-    paintColour = paintColour.value;
-
-    const nodeOfBoxes = document.querySelectorAll('.new');
-    const arrayOfBoxes = Array.from(nodeOfBoxes);
-    arrayOfBoxes.forEach(element => {
-        element.addEventListener('mouseover', changeAttribute => {
-            element.setAttribute('style', `background-color: ${getRandomColour()}`);
-        });
-    });
-};
-
-function getRandomColour() {
-    const colors = ['#ff0000', '#ffa500', '#ffff00', '#008000', '#0000ff', '#4b0082', '#ee82ee'];
-    randomColour = colors[Math.floor(Math.random() * colors.length)];
-    return randomColour;
-};
-
 // Clears the grid:
 function clearGrid(width) {
     for (let x = 0; x < width; x++) {
@@ -96,12 +103,3 @@ function clearGrid(width) {
         targetElement.parentNode.removeChild(targetElement);
     };
 };
-
-// Function for the reset button:
-function resetButton() {
-    let reloadwidth = document.getElementById('mySlider');
-    reloadwidth = reloadwidth.value;
-    clearGrid(currentWidth);
-    loadGrid(reloadwidth);
-};
-
