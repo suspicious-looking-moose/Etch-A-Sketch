@@ -20,9 +20,7 @@ slider.oninput = function() {
 
 }
 
-// Grabbing Colour Choice for page load:
-let paintbrush = document.querySelector('#colour-picker');
-paintbrush = paintbrush.value;
+
 // Setting paint picker to change on selection:
 const paintPicker = document.querySelector('#colour-picker');
 paintPicker.addEventListener('input', changeColour);
@@ -33,6 +31,10 @@ paintPicker.addEventListener('input', changeColour);
 function loadGrid(width) { // Takes grid width as variable.
 
     currentWidth = width;
+    
+    // Grabbing Colour Choice for page load:
+    let paintbrush = document.querySelector('#colour-picker');
+    paintbrush = paintbrush.value;
 
     for (let j = 0; j < width; j++) {
         const verticalContainer = document.createElement('div');
@@ -62,7 +64,6 @@ function changeColour() {
     const nodeOfBoxes = document.querySelectorAll('.new');
     const arrayOfBoxes = Array.from(nodeOfBoxes);
     arrayOfBoxes.forEach(element => {
-        console.log(element);
         element.addEventListener('mouseover', changeAttribute => {
             element.setAttribute('style', `background-color: ${paintColour}`);
         });
@@ -76,7 +77,6 @@ function rainbowMode() {
     const nodeOfBoxes = document.querySelectorAll('.new');
     const arrayOfBoxes = Array.from(nodeOfBoxes);
     arrayOfBoxes.forEach(element => {
-        console.log(element);
         element.addEventListener('mouseover', changeAttribute => {
             element.setAttribute('style', `background-color: ${getRandomColour()}`);
         });
