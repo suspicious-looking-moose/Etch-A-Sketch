@@ -21,6 +21,7 @@ body {
     flex-direction: column;
     border-radius: 40px;
     margin-top: 12px;
+    box-shadow: 1px 1px 30px 1px;
 }
 
 /* Title */
